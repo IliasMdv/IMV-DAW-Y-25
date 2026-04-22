@@ -1,0 +1,23 @@
+.horarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.horarios-table th {
+    text-align: left;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.horarios-table td {
+    padding: 12px;
+    color: rgba(255,255,255,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.horarios-table tr:last-child td { border-bottom: none; }

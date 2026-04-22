@@ -1,0 +1,62 @@
+.btn-reservar {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--bg);
+    background: var(--sun);
+    padding: 14px 36px;
+    border: 2px solid var(--sun);
+    transition: background .25s ease, color .25s ease;
+    opacity: 0;
+    animation: fadeUp .7s ease .65s forwards;
+}
+
+.btn-reservar:hover {
+    background: transparent;
+    color: var(--sun);
+}
+
+.btn-horarios {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color .25s ease;
+    opacity: 0;
+    animation: fadeUp .7s ease .8s forwards;
+}
+
+.btn-horarios svg { width: 16px; transition: transform .3s ease; }
+.btn-horarios:hover { color: var(--white); }
+.btn-horarios:hover svg { transform: translateY(3px); }
+
+.rv-btn {
+    margin-top: auto;
+    padding: 11px 0;
+    background: var(--sun);
+    border: 2px solid var(--sun);
+    color: var(--bg);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background .25s ease, color .25s ease;
+}
+
+.rv-btn:hover {
+    background: transparent;
+    color: var(--sun);
+}

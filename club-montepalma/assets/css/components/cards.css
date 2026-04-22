@@ -1,0 +1,157 @@
+.rv-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.rv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.2);
+}
+
+.rv-card-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rv-card-icon svg { width: 22px; height: 22px; stroke: var(--sun); }
+
+.rv-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.03em;
+}
+
+.rv-card > p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+}
+
+.rv-card-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.rv-card-info li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.rv-card-info li span {
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+}
+
+/* ── Contador animado ── */
+.rv-counter {
+    font-variant-numeric: tabular-nums;
+    color: var(--sun);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* ── Línea de acento al hover ── */
+.rv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--sun));
+    transition: width .4s ease;.rv-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.rv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.2);
+}
+
+.rv-card-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rv-card-icon svg { width: 22px; height: 22px; stroke: var(--sun); }
+
+.rv-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.03em;
+}
+
+.rv-card > p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+}
+
+.rv-card-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.rv-card-info li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.rv-card-info li span {
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+}
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.rv-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.rv-card:hover::before {
+    width: 100%;
+}

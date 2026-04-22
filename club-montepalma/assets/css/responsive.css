@@ -1,0 +1,125 @@
+/* ============================================
+   RESPONSIVE — Club Montepalma
+   ============================================ */
+
+/* ── SCROLLBAR PERSONALIZADA ── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--sun);
+}
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+    .rv-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .rv-hero-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+}
+
+/* ── MÓVIL GRANDE ── */
+@media (max-width: 768px) {
+    .rv-page {
+        padding: 40px 5% 60px;
+    }
+
+    .rv-hero-content {
+        padding: 40px 0 32px;
+    }
+
+    .rv-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .rv-card {
+        padding: 22px 18px;
+    }
+
+    /* Header móvil */
+    .header-inner {
+        padding: 0 16px;
+    }
+
+    /* Footer móvil */
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    /* Modal móvil */
+    .rv-modal {
+        padding: 28px 20px;
+    }
+
+    .rv-modal-btns {
+        flex-direction: column;
+    }
+
+    .rv-modal-register,
+    .rv-modal-login {
+        text-align: center;
+    }
+}
+
+/* ── MÓVIL PEQUEÑO ── */
+@media (max-width: 480px) {
+    .rv-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .rv-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .rv-hero-sub {
+        font-size: 0.6rem;
+    }
+
+    .rv-hero-desc {
+        font-size: 0.78rem;
+    }
+
+    /* Header */
+    .brand {
+        font-size: 1.1rem;
+    }
+
+    .header-nav ul {
+        gap: 16px;
+    }
+
+    /* Horarios box */
+    .horarios-tabs {
+        gap: 0;
+        padding: 12px 12px 0;
+    }
+
+    .horarios-tabs .tab {
+        padding: 8px 10px;
+        font-size: 0.6rem;
+    }
+}

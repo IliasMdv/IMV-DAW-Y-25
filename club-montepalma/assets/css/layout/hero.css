@@ -1,0 +1,81 @@
+.rv-page {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 4% 80px;
+    min-height: calc(100vh - var(--header-h));
+}
+
+.rv-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--dark) 50%, #0f1c2e 100%);
+    z-index: 0;
+}
+
+.rv-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 30%, rgba(74,156,199,.2) 0%, transparent 65%);
+}
+
+.rv-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.rv-hero-sub {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sun);
+    opacity: 0;
+    animation: fadeUp .7s ease .2s forwards;
+}
+
+.rv-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    opacity: 0;
+    animation: fadeUp .7s ease .35s forwards;
+    color: var(--white);
+}
+
+.rv-hero-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeUp .7s ease .5s forwards;
+}
+
+/* ── FIX: texto arriba, grid abajo ── */
+.rv-page {
+    justify-content: flex-start;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.rv-hero-content {
+    padding: 60px 0 48px;
+    width: 100%;
+}
+
+/* ── Parallax: el fondo se mueve independiente ── */
+.rv-bg {
+    will-change: transform;
+    transform-origin: top center;
+}

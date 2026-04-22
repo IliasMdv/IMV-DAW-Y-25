@@ -1,0 +1,209 @@
+/* ============================================
+   CONTACTO — contacto.css
+   ============================================ */
+
+/* ── SECCIÓN PRINCIPAL ── */
+.contact-section {
+    padding: 90px 6%;
+    background: var(--page-bg);
+    transition: background .35s ease;
+}
+
+.contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* ── INFO ── */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.contact-info-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    background: rgba(74, 156, 199, .1);
+    border: 1px solid rgba(74, 156, 199, .2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .35s ease;
+}
+
+.contact-info-icon svg {
+    width: 18px;
+    stroke: var(--accent);
+}
+
+.contact-info-item>div>span {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.contact-info-item>div>p {
+    font-size: 0.82rem;
+    color: var(--card-text-muted);
+    line-height: 1.6;
+    transition: color .35s ease;
+}
+
+/* ── FORMULARIO ── */
+.contact-form-wrap {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .08);
+    transition: background .35s ease, border-color .35s ease;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    color: var(--input-text);
+    resize: vertical;
+    min-height: 130px;
+    outline: none;
+    transition: border-color .25s ease, background .35s ease;
+    width: 100%;
+}
+
+.contact-form textarea::placeholder {
+    color: var(--card-text-muted);
+    opacity: .5;
+}
+
+.contact-form textarea:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(74, 156, 199, .12);
+}
+
+/* ── ÉXITO ── */
+.contact-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact-success svg {
+    width: 52px;
+    stroke: #4ac778;
+}
+
+.contact-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--card-text);
+}
+
+.contact-success p {
+    font-size: 0.82rem;
+    color: var(--card-text-muted);
+    line-height: 1.7;
+    max-width: 320px;
+}
+
+/* ── MAPA ── */
+.contact-map {
+    width: 100%;
+    border-top: 1px solid var(--card-border);
+    overflow: hidden;
+    transition: border-color .35s ease;
+}
+
+.contact-map iframe {
+    display: block;
+    filter: grayscale(20%);
+    transition: filter .3s ease;
+}
+
+.contact-map iframe:hover {
+    filter: grayscale(0%);
+}
+
+[data-theme="dark"] .contact-map iframe {
+    filter: invert(90%) hue-rotate(180deg) grayscale(20%);
+}
+
+[data-theme="dark"] .contact-map iframe:hover {
+    filter: invert(90%) hue-rotate(180deg) grayscale(0%);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .contact-form-wrap {
+        padding: 28px 24px;
+    }
+}
+
+@media (max-width: 560px) {
+    .contact-section {
+        padding: 60px 5%;
+    }
+
+    .contact-map iframe {
+        height: 280px;
+    }
+}
+
+.contact-form-wrap .auth-field label {
+    color: #4a6080 !important;
+}
+
+.contact-form-wrap .auth-field input,
+.contact-form textarea {
+    background: #f0f4f8 !important;
+    border-color: rgba(45,74,107,.2) !important;
+    color: #1a2635 !important;
+    border-radius: var(--radius) !important;
+}
+
+.contact-form-wrap .auth-field input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999999 !important;
+    opacity: 1 !important;
+}

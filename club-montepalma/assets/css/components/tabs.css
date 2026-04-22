@@ -1,0 +1,29 @@
+.horarios-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 16px 24px 0;
+    overflow-x: auto;
+}
+
+.horarios-tabs .tab {
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    cursor: pointer;
+    padding: 8px 16px;
+    border-bottom: 2px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+    white-space: nowrap;
+}
+
+.horarios-tabs .tab:hover  { color: rgba(255,255,255,0.8); }
+.horarios-tabs .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.horarios-content { padding: 24px; }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeUp .3s ease forwards; }

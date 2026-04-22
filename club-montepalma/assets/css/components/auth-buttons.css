@@ -1,0 +1,177 @@
+/* ============================================
+   AUTH BUTTONS — auth-buttons.css
+   .auth-btn para login simple
+   .auth-submit para registro completo
+   ============================================ */
+
+/* ── BOTÓN BASE (Uso general) ── */
+.auth-btn,
+.auth-submit {
+    position: relative;
+    padding: 14px 16px;
+    border: 2px solid var(--sun);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    line-height: 1.2;
+    overflow: hidden;
+}
+
+/* ── GRADIENTE Y COLOR ── */
+.auth-btn,
+.auth-submit {
+    background: linear-gradient(135deg, var(--sun), #ffd700);
+    color: #1a2635;
+}
+
+/* ── EFECTO RIPPLE (::before) ── */
+.auth-btn::before,
+.auth-submit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ── CONTENEDOR DE TEXTO (z-index para estar sobre ripple) ── */
+.auth-btn,
+.auth-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── HOVER ── */
+.auth-btn:hover,
+.auth-submit:hover {
+    background: linear-gradient(135deg, #ffd700, var(--sun));
+    border-color: #ffd700;
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.auth-btn:hover::before,
+.auth-submit:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ── ACTIVE/PRESIONADO ── */
+.auth-btn:active,
+.auth-submit:active {
+    transform: translateY(0);
+}
+
+/* ── DISABLED ── */
+.auth-btn:disabled,
+.auth-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    background: linear-gradient(135deg, var(--sun), #ffd700);
+}
+
+.auth-btn:disabled:hover,
+.auth-submit:disabled:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+/* ── FOCUS (Accesibilidad) ── */
+.auth-btn:focus-visible,
+.auth-submit:focus-visible {
+    outline: 2px solid var(--sun);
+    outline-offset: 2px;
+}
+
+/* ── LOADING STATE (Opcional) ── */
+.auth-btn.loading,
+.auth-submit.loading {
+    pointer-events: none;
+}
+
+.auth-btn.loading::after,
+.auth-submit.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(26, 38, 53, 0.2);
+    border-top-color: #1a2635;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    z-index: 2;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ── MARGIN TOP (En formularios) ── */
+.auth-form .auth-btn,
+.auth-form .auth-submit {
+    margin-top: 8px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 520px) {
+    .auth-btn,
+    .auth-submit {
+        padding: 13px 14px;
+        font-size: 0.75rem;
+    }
+}
+
+/* ── ALTERNATIVA: Botón secundario (Para links tipo botón) ── */
+.auth-btn-secondary {
+    background: transparent;
+    border: 2px solid var(--sun);
+    color: var(--sun);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-btn-secondary:hover {
+    background: var(--sun);
+    color: #1a2635;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.auth-btn-secondary::before {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* ── ALTERNATIVA: Botón pequeño ── */
+.auth-btn-sm {
+    padding: 10px 12px;
+    font-size: 0.7rem;
+}
+
+/* ── ALTERNATIVA: Botón ancho (full-width por defecto) ── */
+.auth-btn-full {
+    width: 100%;
+}
+
+/* ── ALTERNATIVA: Botón inline ── */
+.auth-btn-inline {
+    width: auto;
+    padding: 10px 20px;
+    display: inline-flex;
+}

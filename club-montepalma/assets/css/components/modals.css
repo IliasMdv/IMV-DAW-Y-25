@@ -1,0 +1,169 @@
+.rv-modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 300;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.rv-modal-backdrop.active  { display: block; }
+.rv-modal-backdrop.visible { opacity: 1; }
+
+.rv-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -44%);
+    width: min(440px, 92vw);
+    background: var(--white);
+    border-radius: 12px;
+    padding: 40px 36px;
+    z-index: 301;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease, transform .35s ease;
+    box-shadow: 0 24px 64px rgba(0,0,0,.2);
+}
+
+.rv-modal.active  { display: block; }
+.rv-modal.visible { opacity: 1; transform: translate(-50%, -50%); }
+
+.rv-modal-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(26,38,53,.07);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.rv-modal-icon svg { width: 26px; stroke: var(--bg); }
+
+.rv-modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--bg);
+    margin-bottom: 10px;
+}
+
+.rv-modal p {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.rv-modal-btns { display: flex; gap: 12px; justify-content: center; }
+
+.rv-modal-register {
+    padding: 11px 28px;
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background .25s ease;
+}
+
+.rv-modal-register:hover { background: var(--dark); }
+
+.rv-modal-login {
+    padding: 11px 28px;
+    background: transparent;
+    color: var(--bg);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(26,38,53,.25);
+    border-radius: 4px;
+    transition: border-color .25s ease, color .25s ease;
+}
+
+.rv-modal-login:hover { border-color: var(--bg); color: var(--bg); }
+
+.rv-modal-close {
+    display: block;
+    margin: 18px auto 0;
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: #aaa;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: color .2s ease;
+}
+
+.rv-modal-close:hover { color: #555; }
+
+/* ── Horarios Box ── */
+.horarios-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 200;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.horarios-backdrop.active  { display: block; }
+.horarios-backdrop.visible { opacity: 1; }
+
+.horarios-box {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    width: min(680px, 95vw);
+    background: var(--bg);
+    border-top: 2px solid var(--accent);
+    z-index: 201;
+    opacity: 0;
+    transition: opacity .35s ease, transform .35s ease;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+.horarios-box.active  { display: block; }
+.horarios-box.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.horarios-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.horarios-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.05em;
+}
+
+.horarios-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.5);
+    transition: color .2s ease;
+    padding: 4px;
+}
+
+.horarios-close svg { width: 20px; }
+.horarios-close:hover { color: var(--white); }

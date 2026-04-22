@@ -1,0 +1,215 @@
+/* ============================================
+   EVENTOS — Lista vertical
+   ============================================ */
+
+.ev-page {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 4% 80px;
+    min-height: calc(100vh - var(--header-h));
+}
+
+/* ── MENSAJE FEEDBACK ── */
+.ev-msg {
+    width: 100%;
+    max-width: 860px;
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.ev-msg--ok    { background: rgba(74,199,120,.15); color: #4ac778; border: 1px solid rgba(74,199,120,.3); }
+.ev-msg--error { background: rgba(199,74,74,.15);  color: #c74a4a; border: 1px solid rgba(199,74,74,.3); }
+
+/* ── LISTA ── */
+.ev-list {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ev-empty {
+    text-align: center;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.85rem;
+    padding: 60px 0;
+    letter-spacing: 0.08em;
+}
+
+/* ── ITEM ── */
+.ev-item {
+    display: flex;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.ev-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,.25);
+}
+
+/* ── IMAGEN ── */
+.ev-item-img {
+    position: relative;
+    width: 220px;
+    min-width: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ev-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ev-item-img-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    background: linear-gradient(135deg, var(--dark) 0%, #0f1c2e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ev-item-img-placeholder svg {
+    width: 48px;
+    opacity: 0.2;
+    stroke: var(--white);
+}
+
+.ev-item-tipo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--sun);
+    color: var(--bg);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+/* ── BODY ── */
+.ev-item-body {
+    flex: 1;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ── META ── */
+.ev-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ev-item-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+}
+
+.ev-item-meta svg {
+    width: 14px;
+    opacity: 0.6;
+}
+
+/* ── TÍTULO Y DESCRIPCIÓN ── */
+.ev-item-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+.ev-item-desc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    flex: 1;
+}
+
+/* ── FOOTER DEL ITEM ── */
+.ev-item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 16px;
+}
+
+/* ── PLAZAS ── */
+.ev-plazas {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+}
+
+.ev-plazas--pocas   { color: #f0a020; }
+.ev-plazas--agotado { color: #c74a4a; }
+
+/* ── BOTÓN INSCRIPCIÓN ── */
+.ev-form-inscripcion { margin: 0; }
+
+.ev-btn-inscripcion {
+    padding: 10px 24px;
+    background: var(--sun);
+    border: 2px solid var(--sun);
+    color: var(--bg);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background .25s ease, color .25s ease;
+    white-space: nowrap;
+}
+
+.ev-btn-inscripcion:hover {
+    background: transparent;
+    color: var(--sun);
+}
+
+.ev-btn-inscripcion--disabled {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.3);
+    cursor: not-allowed;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+    .ev-item { flex-direction: column; }
+    .ev-item-img { width: 100%; min-width: unset; height: 160px; }
+    .ev-item-body { padding: 20px; }
+    .ev-item-footer { flex-direction: column; align-items: flex-start; }
+}
