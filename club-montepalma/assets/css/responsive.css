@@ -1,125 +1,162 @@
 /* ============================================
-   RESPONSIVE — Club Montepalma
+   RESPONSIVE GLOBAL — responsive.css
    ============================================ */
 
-/* ── SCROLLBAR PERSONALIZADA ── */
-::-webkit-scrollbar {
-    width: 6px;
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--bg);
+img, video, iframe {
+    max-width: 100%;
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    border-radius: 3px;
-}
+/* ── TABLET (< 900px) ── */
+@media (max-width: 900px) {
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--sun);
-}
-
-/* ── TABLET ── */
-@media (max-width: 1024px) {
+    /* Grid de reservas */
     .rv-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 16px;
     }
 
-    .rv-hero-title {
-        font-size: clamp(2rem, 4vw, 3rem);
+    /* Grid de instalaciones home */
+    .home-inst-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Grid de valores home */
+    .home-valores-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Métricas */
+    .home-metrics-inner {
+        flex-wrap: wrap;
+    }
+    .home-metric {
+        flex: 1 1 50%;
+        border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .home-metric::before { display: none; }
+
+    /* Secciones */
+    .home-section { padding: 60px 5%; }
+    .about-section { padding: 60px 5%; }
+    .contact-section { padding: 60px 5%; }
+
+    /* Contacto */
+    .contact-inner {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    /* About */
+    .about-inner:first-of-type {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    .about-valores-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .about-equipo-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Perfil */
+    .perfil-inner {
+        grid-template-columns: 1fr !important;
+    }
+    .perfil-sidebar { position: static !important; }
+
+    /* Eventos */
+    .ev-item-img {
+        width: 160px !important;
+        min-width: 160px !important;
     }
 }
 
-/* ── MÓVIL GRANDE ── */
-@media (max-width: 768px) {
+/* ── MÓVIL (< 600px) ── */
+@media (max-width: 600px) {
+
+    /* Grid de reservas */
+    .rv-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* rv-page padding */
     .rv-page {
-        padding: 40px 5% 60px;
+        padding: 40px 5% 60px !important;
     }
 
-    .rv-hero-content {
-        padding: 40px 0 32px;
+    /* Hero home */
+    .home-hero-content {
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 5% !important;
     }
+    .home-hero-actions { justify-content: center !important; }
+    .home-deco-line    { display: none !important; }
+    .home-hero-scroll  { left: 50% !important; transform: translateX(-50%) !important; }
 
-    .rv-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
+    /* Instalaciones */
+    .home-inst-grid    { grid-template-columns: 1fr !important; }
+    .home-valores-grid { grid-template-columns: 1fr !important; }
 
-    .rv-card {
-        padding: 22px 18px;
-    }
+    /* Métricas */
+    .home-metric { flex: 1 1 100% !important; }
 
-    /* Header móvil */
-    .header-inner {
-        padding: 0 16px;
-    }
+    /* CTA */
+    .home-cta-btns { flex-direction: column !important; width: 100% !important; }
+    .home-btn-primary,
+    .home-btn-outline,
+    .home-btn-ghost { text-align: center !important; width: 100% !important; }
 
-    /* Footer móvil */
-    .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
+    /* Eventos */
+    .ev-item {
+        flex-direction: column !important;
     }
+    .ev-item-img {
+        width: 100% !important;
+        min-width: unset !important;
+        height: 160px !important;
+    }
+    .ev-item-body  { padding: 18px !important; }
+    .ev-item-footer { flex-direction: column !important; align-items: flex-start !important; }
+    .ev-list { gap: 16px; }
 
-    .footer-bottom-inner {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
+    /* Modal auth */
+    .rv-modal-btns { flex-direction: column !important; }
 
-    /* Modal móvil */
-    .rv-modal {
-        padding: 28px 20px;
-    }
+    /* About */
+    .about-valores-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .about-equipo-grid  { grid-template-columns: 1fr !important; }
 
-    .rv-modal-btns {
-        flex-direction: column;
-    }
+    /* Auth */
+    .auth-card  { padding: 28px 20px !important; }
+    .auth-row   { grid-template-columns: 1fr !important; }
 
-    .rv-modal-register,
-    .rv-modal-login {
-        text-align: center;
-    }
+    /* Contacto */
+    .contact-form-wrap { padding: 22px 16px !important; }
+    .contact-map iframe { height: 260px !important; }
+
+    /* Perfil */
+    .perfil-block { padding: 18px 14px !important; }
+    .perfil-eventos-grid { grid-template-columns: 1fr !important; }
+    .perfil-table th,
+    .perfil-table td { padding: 8px 10px !important; font-size: 0.72rem !important; }
+
+    /* Secciones generales */
+    .home-section  { padding: 50px 5% !important; }
+    .about-section { padding: 50px 5% !important; }
+    .home-cta      { padding: 60px 5% !important; }
 }
 
-/* ── MÓVIL PEQUEÑO ── */
-@media (max-width: 480px) {
-    .rv-grid {
-        grid-template-columns: 1fr;
-        max-width: 360px;
-        margin: 0 auto;
-    }
-
-    .rv-hero-title {
-        font-size: 2.2rem;
-    }
-
-    .rv-hero-sub {
-        font-size: 0.6rem;
-    }
-
-    .rv-hero-desc {
-        font-size: 0.78rem;
-    }
-
-    /* Header */
-    .brand {
-        font-size: 1.1rem;
-    }
-
-    .header-nav ul {
-        gap: 16px;
-    }
-
-    /* Horarios box */
-    .horarios-tabs {
-        gap: 0;
-        padding: 12px 12px 0;
-    }
-
-    .horarios-tabs .tab {
-        padding: 8px 10px;
-        font-size: 0.6rem;
-    }
+/* ── MÓVIL PEQUEÑO (< 400px) ── */
+@media (max-width: 400px) {
+    .about-valores-grid { grid-template-columns: 1fr !important; }
+    .home-hero-title-line,
+    .home-hero-title-accent { font-size: clamp(2.8rem, 14vw, 4rem) !important; }
 }

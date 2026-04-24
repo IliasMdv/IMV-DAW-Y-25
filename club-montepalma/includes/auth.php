@@ -57,8 +57,10 @@ function loginUsuario(string $email, string $password): array
 // ── LOGOUT ────────────────────────────────────
 function logout(): void
 {
-    session_destroy();
-    header('Location: /club-montepalma/public/login.php');
+
+    // Redirige al index del mismo directorio donde se ejecuta el script
+    $baseUrl = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/');
+    header('..' . $baseUrl . '/public/index.php');
     exit;
 }
 

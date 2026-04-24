@@ -433,14 +433,12 @@ body.admin-body {
     }
 }
 
-/* ── MÓVIL ── */
 @media (max-width: 480px) {
 
     body.admin-body {
         flex-direction: column;
     }
 
-    /* Sidebar → header superior */
     .admin-sidebar {
         position: sticky;
         top: 0;
@@ -468,10 +466,6 @@ body.admin-body {
         display: none;
     }
 
-    .admin-sidebar-footer {
-        display: none;
-    }
-
     .admin-nav {
         display: flex;
         flex-direction: row;
@@ -482,7 +476,6 @@ body.admin-body {
     }
 
     .admin-nav-item {
-        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -505,6 +498,32 @@ body.admin-body {
     .admin-nav-item svg {
         width: 18px;
         height: 18px;
+    }
+
+    /* Footer visible como items del nav */
+    .admin-sidebar-footer {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        gap: 0;
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .admin-sidebar-footer .admin-nav-item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 10px 8px;
+        font-size: 0.52rem;
+        letter-spacing: 0.04em;
+        border-radius: 0;
+        flex: 1;
+        text-align: center;
+        width: auto;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
     }
 
     /* Main */

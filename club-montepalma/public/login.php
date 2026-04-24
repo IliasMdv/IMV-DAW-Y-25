@@ -61,7 +61,7 @@ include __DIR__ . '/../includes/header.php';
                        placeholder="••••••••" required>
             </div>
 
-            <button type="submit" class="auth-btn">Entrar</button>
+            <button type="submit" class="auth-submit">Entrar</button>
 
         </form>
         <p class="auth-alt">
