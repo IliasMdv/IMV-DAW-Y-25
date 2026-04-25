@@ -1,6 +1,6 @@
 # Club Montepalma — Plataforma de Gestión Deportiva
 
-![Club Montepalma](/assets/images/logo/montepalma.jpg)
+![Club Montepalma](club-montepalma/assets/images/logo/montepalma.jpg)
 
 > Plataforma web completa para la gestión de reservas, eventos y socios del Club Deportivo Montepalma. Desarrollada con PHP, MySQL y CSS vanilla, sin frameworks externos.
 
